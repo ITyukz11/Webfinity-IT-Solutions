@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import store from "./store";
 import AboutUs from "./contents/AboutUs";
+import HomeContent from "./contents/HomeContent";
 import TSParticles from "./components/TSParticles";
 import Services from "./contents/Services";
 import { useState } from "react";
@@ -23,8 +24,8 @@ export default function Home() {
         <Header setDark={(darkProp: boolean) => setDark(darkProp)} />
 
 
-        <main className="flex min-h-screen flex-col items-center justify-between">
-
+        <main className="flex min-h-screen flex-col items-center justify-between w-screen">
+          <HomeContent/>
           <AboutUs />{/**ABOUT US CONTENT*/}
           <Services />{/**SERVICES US CONTENT*/}
 

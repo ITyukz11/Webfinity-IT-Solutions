@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
   
 
-      <body className={`${inter.className} antialiased`} >{children}</body>
+      <body className={`${inter.className} antialiased w-fit`} >{children}</body>
 
     </html>
   );

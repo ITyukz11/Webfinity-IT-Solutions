@@ -28,10 +28,8 @@ const TSParticles = (props: Props) => {
         background: {
           color: {
             value: 'transparent',
-          },           
-          position: '90% 50%',
+          },                   
           repeat: 'no-repeat',
-          size: '40%',
           opacity: 1,
         },
         fpsLimit: 120,
