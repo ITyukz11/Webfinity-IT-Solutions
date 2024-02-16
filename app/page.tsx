@@ -8,6 +8,8 @@ import HomeContent from "./contents/HomeContent";
 import TSParticles from "./components/TSParticles";
 import Services from "./contents/Services";
 import { useState } from "react";
+import Team from "./contents/Team";
+import Projects from "./contents/Projects";
 
 export default function Home() {
   const [isDark, setIsDark] = useState(false);
@@ -24,11 +26,12 @@ export default function Home() {
         <Header setDark={(darkProp: boolean) => setDark(darkProp)} />
 
 
-        <main className="flex min-h-screen flex-col items-center justify-between w-screen">
+        <main className="flex min-h-screen flex-col items-center justify-between">
           <HomeContent/>
           <AboutUs />{/**ABOUT US CONTENT*/}
           <Services />{/**SERVICES US CONTENT*/}
-
+          <Team/>
+          <Projects/>
         </main>
         <TSParticles />
         <Footer />

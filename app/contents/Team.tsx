@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 type Props = {}
 
-const Services = (props: Props) => {
+const Team = (props: Props) => {
   const dispatch = useDispatch();
   const isDarkMode = useSelector((state: any) => state.theme.isDarkMode);
 
@@ -18,9 +18,9 @@ const Services = (props: Props) => {
   }, []);
 
   return (
-    <div className={`${isDarkMode?'bg-dark text-alternative-white':'bg-alternative-white text-dark'} w-full min-h-min h-screen z-40 px-52 pb-32 flex flex-row justify-center transition-opacity ${loaded ? 'opacity-100' : 'opacity-0'}`}>
-    Services</div>
+    <div className={`${isDarkMode?'bg-black text-white':'bg-white text-black'} w-full min-h-min h-screen z-40 px-52 pb-32 flex flex-row justify-center transition-opacity ${loaded ? 'opacity-100' : 'opacity-0'}`}>
+    Team</div>
   )
 }
 
-export default Services
+export default Team;

@@ -59,14 +59,14 @@ const Header: React.FC<HeaderProps> = ({ setDark }) =>{
 
     return (
         <header
-            className={`py-4 ${isDarkMode ? 'bg-dark' : 'bg-alternative-white'} text-${isDarkMode ? 'white' : 'dark'} sticky top-0 z-${headerZIndex} backdrop-blur-lg transition-all duration-500`}
+            className={`py-4 ${isDarkMode ? 'bg-dark' : 'bg-alternative-white'} w-full text-${isDarkMode ? 'white' : 'dark'} sticky top-0 z-${headerZIndex} backdrop-blur-lg transition-all duration-500`}
         >
             <div className="container mx-auto px-5 lg:px-20 xl:px-40 z-50">
                 <nav className="flex justify-between items-center gap-1">
                     <div>
                         <Link href="/">
-                            <label className={`text-${isDarkMode ? 'white' : 'dark'} font-bold text-base cursor-pointer`}>
-                                Logo Natu
+                            <label className={`text-${isDarkMode ? 'white' : 'dark'} font-bold text-base cursor-pointer z-50`}>
+                                Logo
                             </label>
                         </Link>
                     </div>
@@ -76,7 +76,7 @@ const Header: React.FC<HeaderProps> = ({ setDark }) =>{
                                 <li key={index}>
                                     <Link href={menuItem.href}>
                                         <label
-                                            className={`text-${isDarkMode ? 'white' : 'dark'} z-50 text-sm cursor-pointer hover:text-highlight pb-2 border-b-2 border-transparent hover:border-highlight transition-colors`}
+                                            className={`text-${isDarkMode ? 'white' : 'dark'} z-50 text-xs sm:text-xs md:text-sm  cursor-pointer hover:text-highlight pb-2 border-b-2 border-transparent hover:border-highlight transition-colors`}
                                         >
                                             {menuItem.label}
                                         </label>

@@ -48,7 +48,7 @@ const HomeContent: React.FC<Props> = () => {
     ];
 
     return (
-        <div className={`w-full min-h-min h-screen z-50 pb-32 flex flex-col sm:flex-row px-12 sm:px-20 md:px-32 xl:px-56 justify-center items-center`}>
+        <div className={`w-full min-h-min h-screen z-40 pb-32 flex flex-col sm:flex-row px-12 sm:px-20 md:px-32 xl:px-56 justify-center items-center`}>
             <div className='flex flex-col justify-center w-full sm:w-1/2'>
                 {contentItems.map((item, index) => (
                     <motion.div

@@ -1,14 +1,10 @@
 import React,{useCallback} from 'react'
 import Particles from 'react-particles';
-import { useDispatch, useSelector } from 'react-redux';
 import { loadSlim } from "tsparticles-slim";
 
 type Props = {}
 
 const TSParticles = (props: Props) => {
-  const dispatch = useDispatch();
-  const isDarkMode = useSelector((state: any) => state.theme.isDarkMode);
-
     const particlesInit = useCallback(async (engine: any) => {
         console.log(engine);
         await loadSlim(engine);
@@ -21,7 +17,6 @@ const TSParticles = (props: Props) => {
     <div className=' -z-10'>
     <Particles
       id="tsparticles"
-      style={{ zIndex: '-1', position: 'absolute', transition:'all', transitionDelay:'500'}}
       init={particlesInit}
       loaded={particlesLoaded}
       options={{
