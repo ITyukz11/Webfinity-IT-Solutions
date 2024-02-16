@@ -42,7 +42,7 @@ const HomeContent: React.FC<Props> = () => {
                     <span className={isDarkMode ? 'text-blue-500' : 'text-blue-800'}> Affordable Price</span>.
                 </span>
             ),
-            className: `text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl font-medium ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`,
+            className: `text-sm sm:text-sm md:text-base lg:text-text-base font-medium ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`,
             delay: 1.2
         }
     ];
