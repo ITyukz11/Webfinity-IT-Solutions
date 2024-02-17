@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased min-w-fit w-auto`}>{children}</body>
+      <body className={`${inter.className} antialiased min-w-screen w-auto`}>{children}</body>
     </html>
   );
 }

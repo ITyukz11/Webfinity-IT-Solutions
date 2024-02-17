@@ -18,7 +18,7 @@ const Team = (props: Props) => {
   }, []);
 
   return (
-    <div className={`${isDarkMode?'bg-black text-white':'bg-white text-black'} w-full min-h-min h-screen z-40 px-52 pb-32 flex flex-row justify-center transition-opacity ${loaded ? 'opacity-100' : 'opacity-0'}`}>
+    <div className={`${isDarkMode?'bg-black text-white':'bg-white text-black'} w-full min-h-min h-screen z-40 flex flex-row justify-center transition-opacity ${loaded ? 'opacity-100' : 'opacity-0'}`}>
     Team</div>
   )
 }
