@@ -10,34 +10,39 @@ import Services from "./contents/Services";
 import { useState } from "react";
 import Team from "./contents/Team";
 import Projects from "./contents/Projects";
+import Sidebar from "./components/Sidebar";
+import SideBarButton from "./components/SideBarButton";
 
 export default function Home() {
   const [isDark, setIsDark] = useState(false);
+  const [sideBar, setSideBar] = useState(false);
 
   const setDark = (darkProp: boolean) => {
     setIsDark(darkProp);
   };
-  
+  const setSideBarOpen = (open: boolean) => {
+    setSideBar(open)
+  }
+
   return (
     <Provider store={store}> {/**GLOBAL STATE */}
-    <div className={`${isDark ? 'bg-dark transition-colors' : 'bg-alternative-white transition-colors'}`}>
+      <div className={`${isDark ? 'bg-dark  transition-colors duration-500' : 'bg-alternative-white transition-colors duration-500'}`}>
+        <Header setDark={(darkProp: boolean) => setDark(darkProp)}/>
+        <Sidebar sidebarOpen={sideBar} setSideBarOpen={(open: boolean) => setSideBar(open)} />
 
-
-        <Header setDark={(darkProp: boolean) => setDark(darkProp)} />
-
-
-        <main className="flex min-h-screen flex-col items-center justify-between">
+        <main className="flex min-h-screen w-full flex-col items-center justify-between">
+          <SideBarButton setSideBarOpen={(open: boolean) => setSideBar(open)} sideBarIsOpen={sideBar}/>
           <HomeContent/>
-          <AboutUs />{/**ABOUT US CONTENT*/}
-          <Services />{/**SERVICES US CONTENT*/}
+          <AboutUs/>
+          <Services/>
           <Team/>
           <Projects/>
         </main>
-        <TSParticles />
-        <Footer />
+        <TSParticles/>
+        <Footer/>
 
 
-    </div>
+      </div>
     </Provider>
 
   );

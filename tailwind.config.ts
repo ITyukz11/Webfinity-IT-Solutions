@@ -17,7 +17,8 @@ const config: Config = {
         "highlight":"#3c81f1",
         "dark":"#0E0D0D",
         "alternative-white":"#F3F2F2",
-        
+        "sidebar-light":"#BFDBFE",
+        "sidebar-dark":"#1F1F1F",      
       },
     },
   },
