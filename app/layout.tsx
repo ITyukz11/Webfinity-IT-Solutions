@@ -15,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} antialiased min-w-screen w-auto`}>{children}</body>
+    <html lang="en">           {/**TO REMOVE NEXTJS WARNING IN CONSOLE ADD suppressHydrationWarning={true} */}
+      <body className={`${inter.className} antialiased min-w-screen w-auto `} suppressHydrationWarning={true}>{children}</body>
     </html>
   );
 }

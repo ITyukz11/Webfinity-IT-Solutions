@@ -15,7 +15,9 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
+html{ /* FOR SMOOTH SCROLLING OR WHEN NAVIGATING EACH SECTION IN PAGE */
+  scroll-behavior: smooth; 
+}
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -24,10 +26,61 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+
+
+    --black: #000000;
+    --ash-black: #222;
+    --white: #fafafa;
+    --sky: #00ccff;
+    --green: #22dddd;
+    --blue: #1300ff;
+    --dusk: #6600ff;
+    --purple: #9900ff;
+    --pink: #ff0066;
+    --red: #fe0222;
+    --orange: #fd7702;
+    --yellow: #ffbb00;
+    --bluey: #BFDBFE;
+  
+    --background: var(--white);
+    --accent: var(--bluey);
+
 }
+
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
+
+.glassBlur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0); /* Start with fully transparent background */
+  backdrop-filter: blur(0); /* Start with no blur */
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease; /* Add transitions for opacity and blur */
+}
+
+.glassBlur.active {
+  background-color: rgba(255, 255, 255, 0.5); /* Fully opaque background when active */
+  backdrop-filter: blur(2px); /* Apply blur when active */
+
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50vw;
+  padding-top: 100px;
+  transform: translateX(100%);
+  will-change: transform;
+  box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.5);
+
+}
+

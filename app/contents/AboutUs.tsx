@@ -20,8 +20,8 @@ const AboutUs: React.FC<Props> = () => {
     }, []);
 
     return (
-        <div className={`${isDarkMode?'bg-black text-white':'bg-white text-black'} w-full min-h-min h-screen z-40 flex flex-row justify-center transition-opacity ${loaded ? 'opacity-100' : 'opacity-0'}`}>
-            ABOUT US 
+        <div id='about' className={`${isDarkMode?'bg-black text-white':'bg-white text-black'} w-full min-h-min h-screen z-40 flex flex-row justify-center transition-opacity ${loaded ? 'opacity-100' : 'opacity-0'}`}>
+            
         </div>
     );
 };

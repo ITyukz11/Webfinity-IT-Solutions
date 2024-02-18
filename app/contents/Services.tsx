@@ -18,7 +18,7 @@ const Services = (props: Props) => {
   }, []);
 
   return (
-    <div className={`${isDarkMode?'bg-dark text-alternative-white':'bg-alternative-white text-dark'} w-full min-h-min h-screen z-40 flex flex-row justify-center transition-opacity ${loaded ? 'opacity-100' : 'opacity-0'}`}>
+    <div id='services' className={`${isDarkMode?'bg-dark text-alternative-white':'bg-alternative-white text-dark'} w-full min-h-min h-screen z-40 flex flex-row justify-center transition-opacity ${loaded ? 'opacity-100' : 'opacity-0'}`}>
     Services</div>
   )
 }

@@ -9,7 +9,7 @@ interface ThemeState {
 
 const initialState: ThemeState = {
   isDarkMode: false,
-  isMobile: false
+  isMobile:false,
 };
 
 const themeSlice = createSlice({
