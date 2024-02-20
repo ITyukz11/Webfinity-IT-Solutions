@@ -106,6 +106,7 @@ export default function Home() {
                 className="h-1 bg-blue-600 fixed bottom-0 left-0 right-0 z-[200]"
                 style={{ scaleX: scaleX }}
             />
+            
         <Footer />
         <AnimatePresence>
           {isOpen && (

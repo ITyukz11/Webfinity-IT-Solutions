@@ -42,10 +42,9 @@ const Services = () => {
       image: '/services/web-design.png'
     }
   ];
-  console.log("isMobile: ", isMobile)
 
   return (
-    <div id='services' className={`flex-wrap flex-col justify-center transition-all py-28 duration-500 ${isDarkMode ? 'bg-dark text-white' : 'bg-alternative-white text-black'} w-full min-h-min z-40 flex flex-row justify-center`}>
+    <div id='services' className={`flex-wrap flex-col justify-center transition-all py-4 duration-500 ${isDarkMode ? 'bg-dark text-white' : 'bg-alternative-white text-black'} w-full min-h-min z-40 flex flex-row justify-center`}>
       <div className="text-center py-12 w-full">
         <h1 className="text-4xl font-bold font-mono mb-3 text-blue-500">Explore our Services</h1>
         <h2 className="text-lg mb-4">Elevate your digital presence with our comprehensive suite of services tailored to meet your business needs.</h2>

@@ -6,6 +6,7 @@ import { FaSun } from 'react-icons/fa';
 import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { setCurrentActiveMenu } from '../menuSlice';
+import { usePathname } from 'next/navigation';
 
 interface HeaderProps {
     setDark: (darkProp: boolean) => void;
@@ -26,19 +27,19 @@ const Header: React.FC<HeaderProps> = ({ setDark }) => {
 
     useEffect(() => {
         const handleScroll = () => {
-          const scrolled = window.scrollY;
-          // Set z-index based on scroll position
-          if (scrolled == 0) {
-            setHeaderZIndex(0); // Change to desired z-index value
-          } else {
-            setHeaderZIndex(50); // Reset to original z-index
-          }
-      
+            const scrolled = window.scrollY;
+            // Set z-index based on scroll position
+            if (scrolled == 0) {
+                setHeaderZIndex(0); // Change to desired z-index value
+            } else {
+                setHeaderZIndex(50); // Reset to original z-index
+            }
+
         };
-      
+
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-      }, []);
+    }, []);
 
     useEffect(() => {
         const handleResize = () => {
@@ -64,31 +65,34 @@ const Header: React.FC<HeaderProps> = ({ setDark }) => {
     };
     const menus = [
         {
-            href: '#home',
+            path: '#home',
             label: 'Home'
         },
         {
-            href: '#about',
+            path: '#about',
             label: 'About'
         },
         {
-            href: '#services',
+            path: '#services',
             label: 'Services'
         },
         {
-            href: '#team',
+            path: '#team',
             label: 'Team'
         },
         {
-            href: '#projects',
+            path: '#projects',
             label: 'Projects'
         },
         {
-            href: '#contact',
+            path: '#contact',
             label: 'Contact'
         }
     ];
 
+    const pathName = usePathname()
+    const MotionLink = motion(Link)
+   // console.log("pathName: ",pathName)
     return (
         <header
             className={`py-4 ${isDarkMode ? 'bg-dark' : 'bg-alternative-white'} w-full text-${isDarkMode ? 'white' : 'dark'} 
@@ -114,14 +118,14 @@ const Header: React.FC<HeaderProps> = ({ setDark }) => {
                             <ul className='flex flex-row gap-5 relative'>
                                 {menus.map((menuItem, index) => (
                                     <li key={index} className="relative">
-                                        <Link
-                                            href={menuItem.href}
+                                        <MotionLink
+                                            href={menuItem.path}
                                             id={menuItem.label} // Set the id to the label
                                             className={`text-${isDarkMode ? 'white' : 'dark'} font-bold z-50 text-xs sm:text-xs md:text-sm  cursor-pointer hover:text-highlight pb-2 transition-colors`}
                                             onClick={() => handleMenuItemClick(menuItem.label)}
                                         >
                                             {menuItem.label}
-                                        </Link>
+                                        </MotionLink>
                                         <AnimatePresence>
                                             {activeMenuItem === menuItem.label && (
                                                 <motion.div
@@ -132,7 +136,7 @@ const Header: React.FC<HeaderProps> = ({ setDark }) => {
                                                     exit={{ width: 0 }} // Animate width from 100% to 0 when exiting
                                                     transition={{
                                                         type: "ease",
-                                                        duration: 0.1 
+                                                        duration: 0.1
                                                     }}
                                                 />
                                             )}
@@ -153,9 +157,16 @@ const Header: React.FC<HeaderProps> = ({ setDark }) => {
                                 className="sr-only z-50"
                             />
                             <div className={`w-12 h-6 rounded-full bg-highlight p-1 transition-all duration-300 `}>
-                                <div className={`bg-white w-4 h-4 rounded-full shadow-md transform ${isDarkMode ? 'translate-x-6' : 'translate-x-0'} transition-all duration-300 flex items-center justify-center`}>
-                                    {isDarkMode ? <FaSun className='bg-black rounded-full' size={18} color="#FFFF00" /> : <RiMoonLine className='bg-black rounded-full' size={18} color="#FFFF00" />}
-                                </div>
+
+                                <motion.div className={`bg-white w-4 h-4 rounded-full shadow-md transform ${isDarkMode ? 'translate-x-6' : 'translate-x-0'} transition-all duration-300 flex items-center justify-center`}
+                                    layout transition={{
+                                        type: "spring",
+                                        stiffness: 700,
+                                        damping: 30
+                                    }}>
+                                    {isDarkMode ? <FaSun className='bg-black rounded-full' size={18} color="#FFFF00" /> : <RiMoonLine className='bg-black rounded-full' size={18} color="#FFFF00"
+                                    />}
+                                </motion.div>
                             </div>
                         </label>
                     </div>

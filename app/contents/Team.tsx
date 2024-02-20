@@ -84,7 +84,7 @@ const Team = () => {
 
   return (
     <div id='team' className={`transition-all duration-500 ${isDarkMode ? 'bg-black text-white ' : 'bg-white text-black'} 
-      w-full min-h-min z-40 flex flex-col flex-wrap justify-center text-center py-28 xs:text-xs sm:text-sm md:text-base`}>
+      w-full min-h-min z-40 flex flex-col flex-wrap justify-center text-center py-4 xs:text-xs sm:text-sm md:text-base`}>
       <div className="text-center py-12 w-full">
         <h1 className="text-4xl font-bold font-mono mb-3 text-blue-500">Meet our Team</h1>
         <h2 className="text-lg mb-4">Step into the heart of our organization and meet the exceptional individuals whose collective expertise, dedication, and passion drive the gears of our success.</h2>
@@ -108,26 +108,29 @@ const Team = () => {
             <Image src={`/team/${member.filename}`} className='rounded-lg border-4 shadow-xl border-highlight hover:cursor-pointer' width={300} height={300} alt={`${member.name}`} />
           </motion.div>
           <div className="mb-auto text-center">
-            <h3 className="text-xl font-bold">{member.name}</h3>
-            <p>{member.position}</p>
-          </div>
-          <div className="flex mt-auto pt-5 justify-center">
-            {Object.keys(member.socmed).map((key, index) => (
-              <a
-                key={index}
-                href={member.socmed[key as keyof typeof member.socmed]} // Type assertion here
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mr-2"
-              >
-                {key === 'facebook' && <FaFacebook size={20} />}
-                {key === 'linkedin' && <FaLinkedin size={20} />}
-                {key === 'upwork' && <SiUpwork size={20} />} 
-                {key === 'github' && <FaGithub size={20} />} 
-              </a>
-            ))}
+              <h3 className="text-xl font-bold">{member.name}</h3>
+              <p>{member.position}</p>
+            </div>
+            <motion.div
+              className="flex mt-auto pt-5 justify-center"
+            >
+              {Object.keys(member.socmed).map((key, index) => (
+                <motion.a
+                  key={index}
+                  href={member.socmed[key as keyof typeof member.socmed]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mr-2"
+                  whileHover={{ scale: 1.2 }} // Scale the icon larger on hover
+                >
+                  {key === 'facebook' && <FaFacebook size={20} />}
+                  {key === 'linkedin' && <FaLinkedin size={20} />}
+                  {key === 'upwork' && <SiUpwork size={20} />}
+                  {key === 'github' && <FaGithub size={20} />}
+                </motion.a>
+              ))}
+            </motion.div>
 
-          </div>
         </motion.div>
       ))}
       </div>
