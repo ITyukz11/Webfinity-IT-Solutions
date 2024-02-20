@@ -20,6 +20,7 @@ html{ /* FOR SMOOTH SCROLLING OR WHEN NAVIGATING EACH SECTION IN PAGE */
 }
 body {
   color: rgb(var(--foreground-rgb));
+  scroll-behavior: smooth;
   background: linear-gradient(
       to bottom,
       transparent,
@@ -45,6 +46,24 @@ body {
     --background: var(--white);
     --accent: var(--bluey);
 
+}
+
+/* Change Scrollbar Design */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3c81f1;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #3470d1;
 }
 
 

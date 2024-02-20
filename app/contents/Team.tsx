@@ -71,7 +71,7 @@ const Team = () => {
     },
     {
       name: 'April Rosse C. Cuizon',
-      position: 'Web Designer / Canva / Adobe Photoshop',
+      position: 'Web Designer / Canva / Figma / Adobe Photoshop',
       filename: 'april.png',
       socmed: {
         facebook: 'https://www.facebook.com/nisehtml',
