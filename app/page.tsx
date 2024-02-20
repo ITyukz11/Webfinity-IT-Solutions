@@ -14,6 +14,8 @@ import { AnimatePresence, stagger, useAnimate } from "framer-motion";
 import { MenuToggle } from "./components/MenuToggle";
 import { Menu } from "./components/Menu";
 import { motion, useScroll, useSpring } from "framer-motion";
+import Contact from "./contents/Contact";
+import Accessibility from "./components/Accessibility";
 
 
 function useMenuAnimation(isOpen: boolean) {
@@ -82,7 +84,7 @@ export default function Home() {
 
   return (
     <Provider store={store}>
-      <div className={`${isDark ? 'bg-dark  transition-colors duration-500' : 'bg-alternative-white transition-colors duration-500'}`}>
+      <div className={`${isDark ? 'bg-dark ' : 'bg-alternative-white'} transition-colors duration-500`}>
         <Header setDark={(darkProp: boolean) => setDark(darkProp)} />
         
         <main className="flex min-h-screen w-full flex-col items-center justify-between">
@@ -97,10 +99,11 @@ export default function Home() {
           <Services />
           <Team />
           <Projects />
+          <Contact/>
         </main>
         <TSParticles />
         <motion.div
-                className="h-2 bg-blue-600 fixed bottom-0 left-0 right-0 z-[200]"
+                className="h-1 bg-blue-600 fixed bottom-0 left-0 right-0 z-[200]"
                 style={{ scaleX: scaleX }}
             />
         <Footer />
@@ -116,6 +119,8 @@ export default function Home() {
             />
           )}
         </AnimatePresence>
+
+        <Accessibility/>
 
       </div>
     </Provider>

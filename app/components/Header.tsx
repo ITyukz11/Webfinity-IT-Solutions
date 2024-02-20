@@ -14,7 +14,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ setDark }) => {
     const dispatch = useDispatch();
     const isDarkMode = useSelector((state: any) => state.theme.isDarkMode);
-    const [headerZIndex, setHeaderZIndex] = useState(0);
+    const [headerZIndex, setHeaderZIndex] = useState(50);
     const isMobile = useSelector((state: any) => state.theme.isMobile);
 
     const activeMenuItem = useSelector((state: any) => state.menu.currentActiveMenu);
@@ -26,18 +26,19 @@ const Header: React.FC<HeaderProps> = ({ setDark }) => {
 
     useEffect(() => {
         const handleScroll = () => {
-            const scrolled = window.scrollY;
-            // Set z-index based on scroll position
-            if (scrolled > 0) {
-                setHeaderZIndex(50); // Change to desired z-index value
-            } else {
-                setHeaderZIndex(0); // Reset to original z-index
-            }
+          const scrolled = window.scrollY;
+          // Set z-index based on scroll position
+          if (scrolled == 0) {
+            setHeaderZIndex(0); // Change to desired z-index value
+          } else {
+            setHeaderZIndex(50); // Reset to original z-index
+          }
+      
         };
-
+      
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+      }, []);
 
     useEffect(() => {
         const handleResize = () => {
@@ -81,15 +82,17 @@ const Header: React.FC<HeaderProps> = ({ setDark }) => {
         {
             href: '#projects',
             label: 'Projects'
+        },
+        {
+            href: '#contact',
+            label: 'Contact'
         }
     ];
 
-    console.log("activeMenuItem: ", activeMenuItem)
-
     return (
         <header
-            className={`py-4 ${isDarkMode ? 'bg-dark' : 'bg-alternative-white'} w-full text-${isDarkMode ? 'white' : 'dark'} sticky top-0 z-${headerZIndex} backdrop-blur-lg transition-all duration-500`}
-        >
+            className={`py-4 ${isDarkMode ? 'bg-dark' : 'bg-alternative-white'} w-full text-${isDarkMode ? 'white' : 'dark'} 
+            sticky top-0 z-${headerZIndex} backdrop-blur-lg transition-all duration-500`}>
             <div className="container mx-auto px-5 lg:px-20 xl:px-40 z-50">
                 <nav className={`flex gap-1 justify-between ${isMobile ? 'flex-between justify-items-stretch' : 'flex-row'}`}>
                     <div>

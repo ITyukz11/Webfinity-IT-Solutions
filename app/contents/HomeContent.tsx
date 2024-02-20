@@ -7,16 +7,6 @@ type Props = {};
 
 const HomeContent: React.FC<Props> = () => {
     const isDarkMode = useSelector((state: any) => state.theme.isDarkMode);
-    const [loaded, setLoaded] = useState(false);
-
-    useEffect(() => {
-        // Set a timeout to simulate loading time
-        const timer = setTimeout(() => {
-            setLoaded(true);
-        }, 500);
-
-        return () => clearTimeout(timer);
-    }, []);
 
     const contentItems = [
         {
