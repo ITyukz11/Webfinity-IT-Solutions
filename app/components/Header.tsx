@@ -80,10 +80,10 @@ const Header: React.FC<HeaderProps> = ({ setDark }) => {
             path: '#team',
             label: 'Team'
         },
-        {
-            path: '#projects',
-            label: 'Projects'
-        },
+        // {
+        //     path: '#projects',
+        //     label: 'Projects'
+        // },
         {
             path: '#contact',
             label: 'Contact'

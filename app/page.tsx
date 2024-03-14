@@ -9,7 +9,7 @@ import TSParticles from "./components/TSParticles";
 import Services from "./contents/Services";
 import { useEffect, useState } from "react";
 import Team from "./contents/Team";
-import Projects from "./contents/Projects";
+// import Projects from "./contents/Projects";
 import { AnimatePresence, stagger, useAnimate } from "framer-motion";
 import { MenuToggle } from "./components/MenuToggle";
 import { Menu } from "./components/Menu";
@@ -98,7 +98,7 @@ export default function Home() {
           <AboutUs/>
           <Services />
           <Team />
-          <Projects />
+          {/* <Projects /> */}
           <Contact/>
         </main>
         <TSParticles />

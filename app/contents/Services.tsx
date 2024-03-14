@@ -52,8 +52,8 @@ const Services = () => {
         {/* Your team members section goes here */}
       </div>
       <div className='flex flex-row justify-center w-full items-center'>
-      {isMobile?'':<Image src='/services/services-pic.png' height={500} width={500} alt='Services Image' />}
-        <div className={`flex flex-row justify-start flex-wrap ${isMobile?'':'w-[50%]'} h-fit`}>
+      {isMobile?'':<Image src='/services/services-pic.png' height={400} width={400} alt='Services Image' />}
+        <div className={`flex flex-row flex-wrap ${isMobile?'justify-center':'justify-start w-[60%]'} h-fit`}>
           {servicesOffer.map((service, index) => (
             <motion.div
               key={index}
@@ -65,8 +65,8 @@ const Services = () => {
              <Image src={service.image} width={100} height={100} alt={service.title}/>
               
               <div className="text-center">
-                <h3 className="text-xl font-bold">{service.title}</h3>
-                <p>{service.description}</p>
+                <h3 className="xl:text-sm text-xl font-bold">{service.title}</h3>
+                <p className="xl:text-sm">{service.description}</p>
               </div>
             </motion.div>
           ))}

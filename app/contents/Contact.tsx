@@ -7,7 +7,7 @@ const Contact: React.FC = () => {
   const isDarkMode = useSelector((state: any) => state.theme.isDarkMode);
 
   return (
-    <div id='contact' className={`transition-all duration-500 px-12 sm:px-20 md:px-32 xl:px-56 ${isDarkMode ? 'bg-black text-white ' : 'bg-white text-black'} 
+    <div id='contact' className={`transition-all duration-500 px-12 sm:px-20 md:px-32 xl:px-56 ${isDarkMode ? 'bg-dark text-white ' : 'bg-alternative-white text-black'}
     w-full min-h-min z-40 flex flex-col gap-10 justify-center items-center py-8 overflow-hidden`}>
       <div className="text-center py-12 w-full">
         <h1 className="text-4xl font-bold font-mono mb-3 text-blue-500">Contact Us!</h1>

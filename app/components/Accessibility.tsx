@@ -2,24 +2,31 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaArrowUp } from 'react-icons/fa';
 import { IoIosArrowDown } from 'react-icons/io';
+import { useSelector } from 'react-redux';
+import Link from 'next/link';
 
 const Accessibility: React.FC = () => {
     const [isExpanded, setIsExpanded] = useState(false);
+    const isDarkMode = useSelector((state: any) => state.theme.isDarkMode);
+
 
     const toggleExpanded = () => {
         setIsExpanded(!isExpanded);
+        
     };
 
     return (
         <div className="fixed bottom-2 right-5 z-[999]">
+            <Link href="#home">
             <motion.div
-                className="text-white p-2 rounded-full hover:cursor-pointer hover:bg-gray-400 focus:outline-none"
+                className={`${isDarkMode ? "text-white" : "text-black"} p-2 rounded-full hover:cursor-pointer hover:bg-gray-400 rotate-180 focus:outline-none`}
                 onClick={toggleExpanded}
-                animate={{ rotate: isExpanded ? 180 : 0 }} // Rotate when expanded
+                //animate={{ rotate: isExpanded ? 180 : 0 }} // Rotate when expanded
             >
                 <IoIosArrowDown className='hover:bg-gray-400 hover:cursor-pointer' size={40} onClick={toggleExpanded} />
             </motion.div>
-
+            </Link>
+{/* 
             {isExpanded && (
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -35,7 +42,7 @@ const Accessibility: React.FC = () => {
                             viewBox="0 0 24 24"
                             stroke="currentColor"
                         >
-                            {/* Add your social media icon */}
+                         
                         </svg>
                     </a>
                     <a href="#" className="text-gray-600 hover:text-blue-500">
@@ -46,12 +53,12 @@ const Accessibility: React.FC = () => {
                             viewBox="0 0 24 24"
                             stroke="currentColor"
                         >
-                            {/* Add your social media icon */}
+                          
                         </svg>
                     </a>
-                    {/* Add more social media icons as needed */}
+               
                 </motion.div>
-            )}
+            )}  */}
         </div>
     );
 };
